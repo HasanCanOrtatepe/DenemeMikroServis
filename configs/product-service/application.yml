@@ -1,6 +1,7 @@
 server:
   port: 8080
 
+spring:
   datasource:
     url: ${H2_URL:jdbc:h2:file:./data/productdb}
     driver-class-name: org.h2.Driver
