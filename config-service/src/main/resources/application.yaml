@@ -1,6 +1,12 @@
+server:
+  port: 8888
+
+
+
 spring:
   application:
     name: config-service
+
   cloud:
     config:
       server:
@@ -8,11 +14,11 @@ spring:
           uri: https://github.com/HasanCanOrtatepe/DenemeMikroServis.git
           clone-on-start: true
           search-paths: 'configs/{application}'
+          default-label: master
 
 
 
-server:
-  port:8888
+
 
 
 
