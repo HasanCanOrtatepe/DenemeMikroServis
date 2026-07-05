@@ -5,7 +5,7 @@ server:
     url: ${H2_URL:jdbc:h2:file:./data/customerdb}
     driver-class-name: org.h2.Driver
     username:  ${H2_USER_NAME:sa}
-    password: ${H2_PASSWORD:sa}
+    password: ${H2_PASSWORD:}
 
   h2:
     console:
