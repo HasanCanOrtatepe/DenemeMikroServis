@@ -8,6 +8,9 @@ import com.deneme.customer_service.api.dto.response.UpdateCustomerResponse;
 import com.deneme.customer_service.core.exceptions.ResourceNotFound;
 import com.deneme.customer_service.model.Customer;
 import com.deneme.customer_service.repository.CustomerRespository;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,6 +19,8 @@ import java.util.List;
 public class CustomerServiceImpl implements CustomerService {
 
     private final CustomerRespository customerRespository;
+
+    private static final Logger log = LoggerFactory.getLogger(CustomerServiceImpl.class);
 
     public CustomerServiceImpl(CustomerRespository customerRespository) {
         this.customerRespository = customerRespository;

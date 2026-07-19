@@ -6,6 +6,7 @@ import com.deneme.product_service.api.dto.response.CreatedProductResponse;
 import com.deneme.product_service.api.dto.response.GetProductResponse;
 import com.deneme.product_service.api.dto.response.UpdateProductResponse;
 import com.deneme.product_service.service.ProductService;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -27,6 +28,7 @@ public class ProductController {
 
     @GetMapping
     public ResponseEntity<List<GetProductResponse>> getProducts(){
+        System.out.println("burdan");
         return new ResponseEntity<>(productService.getProducts(), HttpStatus.OK);
     }
 

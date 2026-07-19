@@ -1,20 +1,15 @@
 server:
-  port: 8080
+  port: 0
 
 spring:
   datasource:
-    url: ${H2_URL:jdbc:h2:file:./data/productdb}
-    driver-class-name: org.h2.Driver
-    username: ${H2_USER_NAME:sa}
-    password: ${H2_PASSWORD:}
-
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/productdb}
+    driver-class-name: org.postgresql.Driver
+    username: ${DB_USERNAME:deneme}
+    password: ${DB_PASSWORD:deneme123}
 
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
     show-sql: true
@@ -29,3 +24,8 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:8761/eureka/
+
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
+
+
